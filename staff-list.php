@@ -11,10 +11,18 @@
 
 require_once dirname( __FILE__ ) . "/admin-pages/menu-functions.php";
 
+add_filter( 'user_contactmethods','wrdsb_remove_user_profile_fields',10,1);
 add_action( 'show_user_profile', 'wrdsb_extra_user_profile_fields' );
 add_action( 'edit_user_profile', 'wrdsb_extra_user_profile_fields' );
 add_action( 'personal_options_update', 'wrdsb_save_extra_user_profile_fields' );
 add_action( 'edit_user_profile_update', 'wrdsb_save_extra_user_profile_fields' );
+
+function wrdsb_remove_user_profile_fields($contactmethods) {
+  unset($contactmethods['aim']);
+  unset($contactmethods['jabber']);
+  unset($contactmethods['yim']);
+  return $contactmethods;
+}
 
 function wrdsb_save_extra_user_profile_fields($user_id) {
   if (!current_user_can('edit_user', $user_id)) { return false; }
@@ -81,4 +89,11 @@ function wrdsb_extra_user_profile_fields($user) { ?>
       </td>
     </tr>
   </table>
+  <script>
+    jQuery(document).ready(function() {
+      jQuery('#nickname').parent().parent().hide();
+      jQuery('#display_name').parent().parent().hide();
+      jQuery('#url').parent().parent().hide();
+    });
+  </script>
 <?php } ?>
