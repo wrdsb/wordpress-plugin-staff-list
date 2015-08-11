@@ -21,6 +21,7 @@ function wrdsb_save_extra_user_profile_fields($user_id) {
   update_user_meta($user_id, 'wrdsb_job_title', $_POST['wrdsb_job_title']);
   update_user_meta($user_id, 'wrdsb_voicemail', $_POST['wrdsb_voicemail']);
   update_user_meta($user_id, 'wrdsb_display_in_staff_list', $_POST['wrdsb_display_in_staff_list']);
+  update_user_meta($user_id, 'wrdsb_contact_options', $_POST['wrdsb_contact_options']);
 }
 
 function wrdsb_extra_user_profile_fields($user) { ?>
@@ -59,6 +60,16 @@ function wrdsb_extra_user_profile_fields($user) { ?>
                value="1"
         >
         <span class="description">Should this user appear in the site's Staff List?</span>
+      </td>
+    </tr>
+    </tr>
+      <th><label for="wrdsb_contact_options">Display which contact information?</label></th>
+      <td>
+        <select id="wrdsb_contact_options" name="wrdsb_contact_options">
+          <option value="Both" <?php selected('Both', get_the_author_meta('wrdsb_contact_options', $user->ID)); ?>>Both email and voicemail</option>
+          <option value="Email" <?php selected('Email', get_the_author_meta('wrdsb_contact_options', $user->ID)); ?>>Email only</option>
+          <option value="Voicemail" <?php selected('Voicemail', get_the_author_meta('wrdsb_contact_options', $user->ID)); ?>>Voicemail only</option>
+        </select>
       </td>
     </tr>
   </table>
