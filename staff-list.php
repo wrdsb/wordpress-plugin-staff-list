@@ -27,10 +27,19 @@ function wrdsb_extra_user_profile_fields($user) { ?>
   <h3>Staff List Options</h3>
   <table class="form-table">
     <tr>
-      <th><label for="wrdsb_job_title">Job Title</label></th>
+      <th><label for="wrdsb_job_title">Your Role</label></th>
       <td>
-        <input type="text" id="wrdsb_job_title" name="wrdsb_job_title" size="40" value="<?php echo esc_attr(get_the_author_meta('wrdsb_job_title', $user->ID)); ?>">
-        <span class="description">Enter a job title/description (teacher, custodian, etc.)</span>
+        <select id="wrdsb_job_title" name="wrdsb_job_title">
+          <option value="Principal"       <?php selected('Principal', get_the_author_meta('wrdsb_job_title', $user->ID)); ?>>Principal</option>
+          <option value="Vice-Principal"  <?php selected('Vice-Principal', get_the_author_meta('wrdsb_job_title', $user->ID)); ?>>Vice-Principal</option>
+          <option value="Head Secretary"  <?php selected('Head Secretary', get_the_author_meta('wrdsb_job_title', $user->ID)); ?>>Head Secretary</option>
+          <option value="Office Manager"  <?php selected('Office Manager', get_the_author_meta('wrdsb_job_title', $user->ID)); ?>>Office Manager</option>
+          <option value="Secretary"       <?php selected('Secretary', get_the_author_meta('wrdsb_job_title', $user->ID)); ?>>Secretary</option>
+          <option value="Teacher"         <?php selected('Teacher', get_the_author_meta('wrdsb_job_title', $user->ID)); ?>>Teacher</option>
+          <option value="Department Head" <?php selected('Department Head', get_the_author_meta('wrdsb_job_title', $user->ID)); ?>>Department Head</option>
+          <option value="Educational Assistant" <?php selected('Educational Assistant', get_the_author_meta('wrdsb_job_title', $user->ID)); ?>>Educational Assistant</option>
+          <option value="Custodian"       <?php selected('Custodian', get_the_author_meta('wrdsb_job_title', $user->ID)); ?>>Custodian</option>
+        </select>
       </td>
     </tr>
     <tr>
