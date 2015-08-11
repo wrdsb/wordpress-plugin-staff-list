@@ -39,17 +39,24 @@ class Staff_List_Table extends WP_List_Table {
   function column_default($user, $column_name){
     switch($column_name){
       case 'col_display':
-        return $user->get('in_staff_list');
+        if (($user->get('wrdsb_display_in_staff_list')) == 1) {
+          $display_me = 'Yes';
+        } else {
+          $display_me = 'No';
+        }
+        return $display_me;
       case 'col_last_name':
         return $user->get('last_name');
       case 'col_first_name':
         return $user->get('first_name');
-      case 'col_job_description':
-        return $user->get('job_description');
+      case 'col_job_title':
+        return $user->get('wrdsb_job_title');
       case 'col_email':
         return esc_html($user->user_email);
       case 'col_voicemail':
-        return $user->get('voicemail');
+        return $user->get('wrdsb_voicemail');
+      case 'col_website':
+        return $user->get('user_url');
       default:
         return print_r($user,true); //Show the whole array for troubleshooting purposes
     }
@@ -64,9 +71,10 @@ class Staff_List_Table extends WP_List_Table {
       'col_display'         => 'Display?',
       'col_last_name'       => 'Last Name',
       'col_first_name'      => 'First Name',
-      'col_job_description' => 'Job Description',
+      'col_job_title'       => 'Job Title',
       'col_email'           => 'Email',
-      'col_voicemail'       => 'Voicemail'
+      'col_voicemail'       => 'Voicemail',
+      'col_website'         => 'Website'
     );
     return $columns;
   }
@@ -79,7 +87,7 @@ class Staff_List_Table extends WP_List_Table {
     //return $sortable = array(
       //'col_last_name'       => '',
       //'col_first_name'      => '',
-      //'col_job_description' => '',
+      //'col_job_title' => '',
       //'col_email'           => ''
     //);
   //}
