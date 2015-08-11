@@ -22,6 +22,7 @@ function wrdsb_save_extra_user_profile_fields($user_id) {
   update_user_meta($user_id, 'wrdsb_voicemail', $_POST['wrdsb_voicemail']);
   update_user_meta($user_id, 'wrdsb_display_in_staff_list', $_POST['wrdsb_display_in_staff_list']);
   update_user_meta($user_id, 'wrdsb_contact_options', $_POST['wrdsb_contact_options']);
+  update_user_meta($user_id, 'wrdsb_website_url', $_POST['wrdsb_website_url']);
 }
 
 function wrdsb_extra_user_profile_fields($user) { ?>
@@ -44,10 +45,17 @@ function wrdsb_extra_user_profile_fields($user) { ?>
       </td>
     </tr>
     <tr>
-      <th><label for="wrdsb_voicemail">Voicemail</label></th>
+      <th><label for="wrdsb_voicemail">Voicemail Extension</label></th>
       <td>
-        <input type="text" id="wrdsb_voicemail" name="wrdsb_voicemail" size="6" value="<?php echo esc_attr(get_the_author_meta('wrdsb_voicemail', $user->ID )); ?>">
+        <input type="text" id="wrdsb_voicemail" name="wrdsb_voicemail" size="6" value="<?php echo esc_attr(get_the_author_meta('wrdsb_voicemail', $user->ID )); ?>" />
         <span class="description">Enter a voicemail extension (12345)</span>
+      </td>
+    </tr>
+    <tr>
+      <th><label for="wrdsb_website_url">Website URL</label></th>
+      <td>
+        <input type="text" id="wrdsb_website_url" name="wrdsb_website_url" size="50" value="<?php echo esc_attr(get_the_author_meta('wrdsb_website_url', $user->ID )); ?>" />
+        <br /><span class="description">Enter a wrdsb.ca website URL (http://teachers.wrdsb.ca/mysite)</span>
       </td>
     </tr>
     <tr>
@@ -58,7 +66,7 @@ function wrdsb_extra_user_profile_fields($user) { ?>
                name="wrdsb_display_in_staff_list"
                <?php if ((get_the_author_meta('wrdsb_display_in_staff_list', $user->ID)) == '1') { ?>checked="checked"<?php } ?>
                value="1"
-        >
+        />
         <span class="description">Should this user appear in the site's Staff List?</span>
       </td>
     </tr>
