@@ -15,14 +15,23 @@ function register_wrdsb_staff_list_options() {
 }
 
 function wrdsb_staff_list_render_list_page() {
-  echo '<div class="wrap">';
-  echo '<h2>Staff List Management</h2>';
-  //Prepare Table of elements
+  //Create an instance of our package class...
   $staff_list_table = new Staff_List_Table();
+  //Fetch, prepare, sort, and filter our data...
   $staff_list_table->prepare_items();
+  ?>
+    <div class="wrap">
 
-  //Table of elements
-  $staff_list_table->display();
-  echo '</div>';
-}
-?>
+        <div id="icon-users" class="icon32"><br/></div>
+        <h2>Staff List Management</h2>
+
+        <!-- Forms are NOT created automatically, so you need to wrap the table in one to use features like bulk actions -->
+        <form id="staff-filter" method="get">
+            <!-- For plugins, we also need to ensure that the form posts back to our current page -->
+            <input type="hidden" name="page" value="<?php echo $_REQUEST['page'] ?>" />
+            <!-- Now we can render the completed list table -->
+            <?php $staff_list_table->display() ?>
+        </form>
+
+    </div>
+<?php } ?>
