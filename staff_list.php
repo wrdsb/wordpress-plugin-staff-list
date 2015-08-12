@@ -22,6 +22,7 @@ Template Name: Staff List
           <table class="table table-striped table-bordered table-fixed-head">
             <thead>
               <tr>
+                <th class="text-left">Sort Order</th>
                 <th class="text-left">Name</th>
                 <th class="text-left">Role</th>
                 <th class="text-left">Email Address</th>
@@ -32,6 +33,15 @@ Template Name: Staff List
             <tbody>
               <?php foreach($user_query->results as $user) { ?>
                 <tr>
+                  <td>
+                    <?php switch($user->wrdsb_job_title) {
+                      case 'Principal':
+                        echo '1';
+                      case 'Vice-Principal':
+                        echo '2';
+                      default:
+                    } ?>
+                  </td>
                   <td><?php echo $user->last_name; ?>, <?php echo $user->first_name; ?></td>
                   <td><?php echo $user->wrdsb_job_title; ?></td>
                   <?php if ($user->wrdsb_contact_options == 'Email') { ?>
