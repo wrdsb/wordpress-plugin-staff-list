@@ -18,32 +18,57 @@ Template Name: Staff List
 
       // User Loop
       if (!empty($user_query->results)) { ?>
-        <div class="table-responsive hidden-xs" >
-          <table class="table table-striped table-bordered table-fixed-head">
+        <div class="table-responsive hidden-sm" >
+          <table class="table table-striped table-bordered table-fixed-head" data-toggle="table" data-sort-name="role">
             <thead>
               <tr>
-                <th class="text-left">Sort Order</th>
-                <th class="text-left">Name</th>
-                <th class="text-left">Role</th>
-                <th class="text-left">Email Address</th>
-                <th class="text-left">Voicemail Number</th>
-                <th class="text-left">Website</th>
+                <th class="text-left" data-field="name" data-sortable="true">Name</th>
+                <th class="text-left" data-field="role" data-sortable="true">Role</th>
+                <th class="text-left" data-field="email" data-sortable="true">Email</th>
+                <th class="text-left" data-field="voicemail" data-sortable="true">Voicemail</th>
+                <th class="text-left" data-field="website" data-sortable="true">Website</th>
               </tr>
             </thead>
             <tbody>
               <?php foreach($user_query->results as $user) { ?>
                 <tr>
+                  <td><?php echo $user->last_name; ?>, <?php echo $user->first_name; ?></td>
                   <td>
+                    <span class="hidden">
                     <?php switch($user->wrdsb_job_title) {
                       case 'Principal':
                         echo '1';
+                        break;
                       case 'Vice-Principal':
                         echo '2';
+                        break;
+                      case 'Office Manager':
+                        echo '10';
+                        break;
+                      case 'Head Secretary':
+                        echo '11';
+                        break;
+                      case 'Secretary':
+                        echo '12';
+                        break;
+                      case 'Department Head':
+                        echo '50';
+                        break;
+                      case 'Teacher':
+                        echo '51';
+                        break;
+                      case 'Educational Assistant':
+                        echo '70';
+                        break;
+                      case 'Custodian':
+                        echo '80';
+                        break;
                       default:
+                        echo '99';
                     } ?>
+                    </span>
+                    <?php echo $user->wrdsb_job_title; ?>
                   </td>
-                  <td><?php echo $user->last_name; ?>, <?php echo $user->first_name; ?></td>
-                  <td><?php echo $user->wrdsb_job_title; ?></td>
                   <?php if ($user->wrdsb_contact_options == 'Email') { ?>
                     <td><?php echo $user->user_email; ?></td>
                     <td>&nbsp;</td>
@@ -65,7 +90,7 @@ Template Name: Staff List
           </table>
         </div>
 
-        <div class="visible-xs">
+        <div class="visible-sm">
           <ul class="table-list">
             <?php foreach($user_query->results as $user) { ?>
               <li>
