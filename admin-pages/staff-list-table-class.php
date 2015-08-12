@@ -24,12 +24,25 @@ class Staff_List_Table extends WP_List_Table {
   function extra_tablenav( $which ) {
     if ( $which == "top" ){
       //The code that goes before the table is here
-      echo"Hello, I'm before the table";
+      echo "Hello, I'm before the table";
     }
     if ( $which == "bottom" ){
       //The code that goes after the table is there
-      echo"Hi, I'm after the table";
+      echo "Hi, I'm after the table";
     }
+  }
+
+  function get_bulk_actions() {
+    return array(
+      'Option1' => 'Add to Staff List',
+      'Option2' => 'Remove from Staff List'
+    );
+  }
+
+  function column_cb($item) {
+    return sprintf(
+      '<input type="checkbox" name="user[]" value="%s" />', $item->ID
+    );
   }
 
  /**
@@ -68,7 +81,8 @@ class Staff_List_Table extends WP_List_Table {
   */
   function get_columns() {
     $columns = array(
-      'col_display'         => 'Display?',
+      'cb'                  => '<input type="checkbox" />',
+      'col_display'         => 'Displayed?',
       'col_last_name'       => 'Last Name',
       'col_first_name'      => 'First Name',
       'col_job_title'       => 'Job Title',
@@ -83,14 +97,14 @@ class Staff_List_Table extends WP_List_Table {
   * Decide which columns to activate the sorting functionality on
   * @return array $sortable, the array of columns that can be sorted by the user
   */
-  //public function get_sortable_columns() {
-    //return $sortable = array(
-      //'col_last_name'       => '',
-      //'col_first_name'      => '',
-      //'col_job_title' => '',
-      //'col_email'           => ''
-    //);
-  //}
+  public function get_sortable_columns() {
+    return $sortable = array(
+      'col_last_name'       => 'last_name',
+      'col_first_name'      => 'first_name',
+      'col_job_title'       => 'wrdsb_job_title',
+      'col_email'           => 'email'
+    );
+  }
 
  /**
   * Prepare the table with different parameters, pagination, columns and table elements
