@@ -227,21 +227,31 @@ class Staff_List_Table extends WP_List_Table {
      * @see $this->prepare_items()
      **************************************************************************/
     function process_actions() {
-
         //Detect when a bulk action is being triggered...
         if( 'bulk_add'===$this->current_action() ) {
-            wp_die('Items added!');
+          foreach ($_GET['user'] as $index => $user_id) {
+            $user = get_user_by('id', $user_id);
+            update_user_meta($user->ID, 'wrdsb_display_in_staff_list', 1);
+          }
+          echo '<div class="updated"><p>Users added to Staff List.</p></div>';
         }
         if( 'bulk_remove'===$this->current_action() ) {
-            wp_die('Items removed!');
+          foreach ($_GET['user'] as $index => $user_id) {
+            $user = get_user_by('id', $user_id);
+            update_user_meta($user->ID, 'wrdsb_display_in_staff_list', 0);
+          }
+          echo '<div class="updated"><p>Users removed from Staff List.</p></div>';
         }
         if( 'add'===$this->current_action() ) {
-            wp_die('Item added!');
+          $user = get_user_by('id',$_GET["user"]);
+          update_user_meta($user->ID, 'wrdsb_display_in_staff_list', 1);
+          echo '<div class="updated"><p>User added to Staff List.</p></div>';
         }
         if( 'remove'===$this->current_action() ) {
-            wp_die('Item removed!');
+          $user = get_user_by('id',$_GET["user"]);
+          update_user_meta($user->ID, 'wrdsb_display_in_staff_list', 0);
+          echo '<div class="updated"><p>User removed from Staff List.</p></div>';
         }
-
     }
 
 
