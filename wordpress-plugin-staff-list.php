@@ -6,7 +6,7 @@
 * Description: Displays staff lists on websites, based on local WP user data.
 * Author: James Schumann
 * Author URI: http://james.schumann.ca
-* Version: 0.0.1
+* Version: 0.0.2
 * License: GPLv2 or later
 */
 
