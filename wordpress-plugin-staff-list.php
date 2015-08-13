@@ -2,6 +2,7 @@
 /*
 * Plugin Name: WRDSB Staff List
 * Plugin URI: https://github.com/wrdsb/wordpress-plugin-staff-list
+* GitHub Plugin URI: afragen/github-updater
 * Description: Displays staff lists on websites, based on local WP user data.
 * Author: James Schumann
 * Author URI: http://james.schumann.ca
