@@ -5,7 +5,7 @@
 * Description: Displays staff lists on websites, based on local WP user data.
 * Author: James Schumann
 * Author URI: http://james.schumann.ca
-* Version: 0.0.2
+* Version: 0.0.3
 * License: GPLv2 or later
 * GitHub Plugin URI: wrdsb/wordpress-plugin-staff-list
 * GitHub Branch: master
