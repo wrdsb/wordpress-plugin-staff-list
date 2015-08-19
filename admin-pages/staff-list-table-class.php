@@ -117,8 +117,8 @@ class Staff_List_Table extends WP_List_Table {
 
         //Build row actions
         $actions = array(
-            'add'      => sprintf('<a href="?page=%s&action=%s&user=%s">Add</a>',$_REQUEST['page'],'add',$user->ID),
-            'remove'   => sprintf('<a href="?page=%s&action=%s&user=%s">Remove</a>',$_REQUEST['page'],'remove',$user->ID),
+            'add'      => sprintf('<a href="?page=%s&action=%s&user=%s">Yes</a>',$_REQUEST['page'],'add',$user->ID),
+            'remove'   => sprintf('<a href="?page=%s&action=%s&user=%s">No</a>',$_REQUEST['page'],'remove',$user->ID),
         );
 
         //Return the title contents
