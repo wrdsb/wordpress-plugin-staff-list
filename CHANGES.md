@@ -1,3 +1,8 @@
+#### 0.1.0
+* Disbled editing of Voicemail field in user profile
+* Changed Add/Remove links in admin table to Yes/No
+* Version bump for first stable release
+
 #### 0.0.3
 * Added CHANGES.md
 
