@@ -96,6 +96,7 @@ function wrdsb_extra_user_profile_fields($user) { ?>
       jQuery('#nickname').parent().parent().hide();
       jQuery('#display_name').parent().parent().hide();
       jQuery('#url').parent().parent().hide();
+      jQuery('#wrdsb_voicemail').prop('disabled', true);
     });
   </script>
 <?php } ?>
