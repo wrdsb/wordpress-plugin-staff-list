@@ -3,9 +3,9 @@
 * Plugin Name: WRDSB Staff List
 * Plugin URI: https://github.com/wrdsb/wordpress-plugin-staff-list
 * Description: Displays staff lists on websites, based on local WP user data.
-* Author: James Schumann
-* Author URI: http://james.schumann.ca
-* Version: 0.0.3
+* Author: WRDSB
+* Author URI: http://www.wrdsb.ca
+* Version: 0.1.0
 * License: GPLv2 or later
 * GitHub Plugin URI: wrdsb/wordpress-plugin-staff-list
 * GitHub Branch: master
