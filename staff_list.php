@@ -107,7 +107,7 @@ Template Name: Staff List
         </div>
       <?php
       } else {
-	echo '<p>No staff members found.</p>';
+	echo '<p>We are currently building our staff list for the new school year.</p>';
       } ?>
     </div>
   </div>
