@@ -1,3 +1,7 @@
+#### 0.1.1
+* Tweak to empty staff list text
+* Updated plugin author URI
+
 #### 0.1.0
 * Disbled editing of Voicemail field in user profile
 * Changed Add/Remove links in admin table to Yes/No
