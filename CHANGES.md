@@ -1,3 +1,7 @@
+#### 0.1.2
+* Added Blank as default option in user profile roles list
+* Un-disabled editing of voicemail field in user profile
+
 #### 0.1.1
 * Tweak to empty staff list text
 * Updated plugin author URI
