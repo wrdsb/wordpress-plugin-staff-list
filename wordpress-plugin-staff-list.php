@@ -5,7 +5,7 @@
 * Description: Displays staff lists on websites, based on local WP user data.
 * Author: WRDSB
 * Author URI: https://github.com/wrdsb
-* Version: 0.1.2
+* Version: 0.1.3
 * License: GPLv2 or later
 * GitHub Plugin URI: wrdsb/wordpress-plugin-staff-list
 * GitHub Branch: master
@@ -43,15 +43,16 @@ function wrdsb_extra_user_profile_fields($user) { ?>
       <td>
         <select id="wrdsb_job_title" name="wrdsb_job_title">
           <option value=""                      <?php selected('', get_the_author_meta('wrdsb_job_title', $user->ID)); ?>>Blank</option>
-          <option value="Principal"             <?php selected('Principal', get_the_author_meta('wrdsb_job_title', $user->ID)); ?>>Principal</option>
-          <option value="Vice-Principal"        <?php selected('Vice-Principal', get_the_author_meta('wrdsb_job_title', $user->ID)); ?>>Vice-Principal</option>
-          <option value="Head Secretary"        <?php selected('Head Secretary', get_the_author_meta('wrdsb_job_title', $user->ID)); ?>>Head Secretary</option>
-          <option value="Office Manager"        <?php selected('Office Manager', get_the_author_meta('wrdsb_job_title', $user->ID)); ?>>Office Manager</option>
-          <option value="Secretary"             <?php selected('Secretary', get_the_author_meta('wrdsb_job_title', $user->ID)); ?>>Secretary</option>
-          <option value="Teacher"               <?php selected('Teacher', get_the_author_meta('wrdsb_job_title', $user->ID)); ?>>Teacher</option>
+          <option value="Custodian"             <?php selected('Custodian', get_the_author_meta('wrdsb_job_title', $user->ID)); ?>>Custodian</option>
           <option value="Department Head"       <?php selected('Department Head', get_the_author_meta('wrdsb_job_title', $user->ID)); ?>>Department Head</option>
           <option value="Educational Assistant" <?php selected('Educational Assistant', get_the_author_meta('wrdsb_job_title', $user->ID)); ?>>Educational Assistant</option>
-          <option value="Custodian"             <?php selected('Custodian', get_the_author_meta('wrdsb_job_title', $user->ID)); ?>>Custodian</option>
+          <option value="Head Secretary"        <?php selected('Head Secretary', get_the_author_meta('wrdsb_job_title', $user->ID)); ?>>Head Secretary</option>
+          <option value="Library Clerk"         <?php selected('Library Clerk', get_the_author_meta('wrdsb_job_title', $user->ID)); ?>>Library Clerk</option>
+          <option value="Office Manager"        <?php selected('Office Manager', get_the_author_meta('wrdsb_job_title', $user->ID)); ?>>Office Manager</option>
+          <option value="Principal"             <?php selected('Principal', get_the_author_meta('wrdsb_job_title', $user->ID)); ?>>Principal</option>
+          <option value="Secretary"             <?php selected('Secretary', get_the_author_meta('wrdsb_job_title', $user->ID)); ?>>Secretary</option>
+          <option value="Teacher"               <?php selected('Teacher', get_the_author_meta('wrdsb_job_title', $user->ID)); ?>>Teacher</option>
+          <option value="Vice-Principal"        <?php selected('Vice-Principal', get_the_author_meta('wrdsb_job_title', $user->ID)); ?>>Vice-Principal</option>
         </select>
       </td>
     </tr>

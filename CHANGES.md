@@ -1,3 +1,7 @@
+#### 0.1.3
+* Added missing role for Libary Clerk
+* Alpha-sorted roles selector to make finding a role easier
+
 #### 0.1.2
 * Added Blank as default option in user profile roles list
 * Un-disabled editing of voicemail field in user profile
