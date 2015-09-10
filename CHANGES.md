@@ -1,3 +1,7 @@
+#### 0.1.4
+* Added DECE role
+* Added sort integer for Library Clerk
+
 #### 0.1.3
 * Added missing role for Libary Clerk
 * Alpha-sorted roles selector to make finding a role easier
