@@ -5,7 +5,7 @@
 * Description: Displays staff lists on websites, based on local WP user data.
 * Author: WRDSB
 * Author URI: https://github.com/wrdsb
-* Version: 0.1.4
+* Version: 0.1.5
 * License: GPLv2 or later
 * GitHub Plugin URI: wrdsb/wordpress-plugin-staff-list
 * GitHub Branch: master
@@ -44,6 +44,7 @@ function wrdsb_extra_user_profile_fields($user) { ?>
         <select id="wrdsb_job_title" name="wrdsb_job_title">
           <option value=""                      <?php selected('', get_the_author_meta('wrdsb_job_title', $user->ID)); ?>>Blank</option>
           <option value="Custodian"             <?php selected('Custodian', get_the_author_meta('wrdsb_job_title', $user->ID)); ?>>Custodian</option>
+          <option value="CYW"                   <?php selected('CYW', get_the_author_meta('wrdsb_job_title', $user->ID)); ?>>CYW</option>
           <option value="DECE"                  <?php selected('DECE', get_the_author_meta('wrdsb_job_title', $user->ID)); ?>>DECE</option>
           <option value="Department Head"       <?php selected('Department Head', get_the_author_meta('wrdsb_job_title', $user->ID)); ?>>Department Head</option>
           <option value="Educational Assistant" <?php selected('Educational Assistant', get_the_author_meta('wrdsb_job_title', $user->ID)); ?>>Educational Assistant</option>

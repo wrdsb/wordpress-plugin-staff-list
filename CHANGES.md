@@ -1,3 +1,6 @@
+#### 0.1.5
+* Added CYW role
+
 #### 0.1.4
 * Added DECE role
 * Added sort integer for Library Clerk
