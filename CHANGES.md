@@ -1,3 +1,7 @@
+#### 0.1.7
+* Fix bulk admin page to use site-specific options instead of global usermeta
+* Exclude user with ID 1 from staff list
+
 #### 0.1.6
 * User metadata now site-specific
 * Removed unused vanity sort prefix from job titles

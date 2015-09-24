@@ -83,7 +83,7 @@ class Staff_List_Table extends WP_List_Table {
       case 'first_name':
         return $user->get('first_name');
       case 'job_title':
-        return $user->get('wrdsb_job_title');
+        return get_user_option('wrdsb_job_title', $user->ID);
       case 'email':
         return esc_html($user->user_email);
       default:
@@ -109,7 +109,7 @@ class Staff_List_Table extends WP_List_Table {
      * @return string Text to be placed inside the column <td> (movie title only)
      **************************************************************************/
     function column_display($user){
-        if (($user->get('wrdsb_display_in_staff_list')) == 1) {
+        if ((get_user_option('wrdsb_display_in_staff_list', $user->ID)) == 1) {
           $display_me = 'Yes';
         } else {
           $display_me = 'No';
@@ -231,25 +231,25 @@ class Staff_List_Table extends WP_List_Table {
         if( 'bulk_add'===$this->current_action() ) {
           foreach ($_GET['user'] as $index => $user_id) {
             $user = get_user_by('id', $user_id);
-            update_user_meta($user->ID, 'wrdsb_display_in_staff_list', 1);
+            update_user_option($user->ID, 'wrdsb_display_in_staff_list', 1);
           }
           echo '<div class="updated"><p>Users added to Staff List.</p></div>';
         }
         if( 'bulk_remove'===$this->current_action() ) {
           foreach ($_GET['user'] as $index => $user_id) {
             $user = get_user_by('id', $user_id);
-            update_user_meta($user->ID, 'wrdsb_display_in_staff_list', 0);
+            update_user_option($user->ID, 'wrdsb_display_in_staff_list', 0);
           }
           echo '<div class="updated"><p>Users removed from Staff List.</p></div>';
         }
         if( 'add'===$this->current_action() ) {
           $user = get_user_by('id',$_GET["user"]);
-          update_user_meta($user->ID, 'wrdsb_display_in_staff_list', 1);
+          update_user_option($user->ID, 'wrdsb_display_in_staff_list', 1);
           echo '<div class="updated"><p>User added to Staff List.</p></div>';
         }
         if( 'remove'===$this->current_action() ) {
           $user = get_user_by('id',$_GET["user"]);
-          update_user_meta($user->ID, 'wrdsb_display_in_staff_list', 0);
+          update_user_option($user->ID, 'wrdsb_display_in_staff_list', 0);
           echo '<div class="updated"><p>User removed from Staff List.</p></div>';
         }
     }
