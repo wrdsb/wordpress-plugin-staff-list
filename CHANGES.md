@@ -1,3 +1,7 @@
+#### 0.1.6
+* User metadata now site-specific
+* Removed unused vanity sort prefix from job titles
+
 #### 0.1.5
 * Added CYW role
 
