@@ -45,6 +45,8 @@ function wrdsb_extra_user_profile_fields($user) { ?>
       <td>
         <select id="wrdsb_job_title" name="wrdsb_job_title">
           <option value=""                      <?php selected('', get_user_option('wrdsb_job_title', $user->ID)); ?>>Blank</option>
+          <option value="Admin Assistant"       <?php selected('Admin Assistant', get_user_option('wrdsb_job_title', $user->ID)); ?>>Admin Assistant</option>
+          <option value="Assistant Office Supervisor"  <?php selected('Assistant Office Supervisor', get_user_option('wrdsb_job_title', $user->ID)); ?>>Assistant Office Supervisor</option>
           <option value="Custodian"             <?php selected('Custodian', get_user_option('wrdsb_job_title', $user->ID)); ?>>Custodian</option>
           <option value="CYW"                   <?php selected('CYW', get_user_option('wrdsb_job_title', $user->ID)); ?>>CYW</option>
           <option value="DECE"                  <?php selected('DECE', get_user_option('wrdsb_job_title', $user->ID)); ?>>DECE</option>
