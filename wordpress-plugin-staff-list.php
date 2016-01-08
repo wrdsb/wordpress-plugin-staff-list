@@ -5,7 +5,7 @@
 * Description: Displays staff lists on websites, based on local WP user data.
 * Author: WRDSB
 * Author URI: https://github.com/wrdsb
-* Version: 0.1.7
+* Version: 0.1.8
 * License: GPLv2 or later
 * GitHub Plugin URI: wrdsb/wordpress-plugin-staff-list
 * GitHub Branch: master

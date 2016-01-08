@@ -1,3 +1,9 @@
+#### 0.1.8
+* Added role School Social Worker
+* Added role In School Technician
+* Added role Admin Assistant
+* Added role Assistant Office Supervisor
+
 #### 0.1.7
 * Fix bulk admin page to use site-specific options instead of global usermeta
 * Exclude user with ID 1 from staff list
