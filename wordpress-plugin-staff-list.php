@@ -54,6 +54,7 @@ function wrdsb_extra_user_profile_fields($user) { ?>
           <option value="Library Clerk"         <?php selected('Library Clerk', get_user_option('wrdsb_job_title', $user->ID)); ?>>Library Clerk</option>
           <option value="Office Manager"        <?php selected('Office Manager', get_user_option('wrdsb_job_title', $user->ID)); ?>>Office Manager</option>
           <option value="Principal"             <?php selected('Principal', get_user_option('wrdsb_job_title', $user->ID)); ?>>Principal</option>
+          <option value="School Social Worker"  <?php selected('School Social Worker', get_user_option('wrdsb_job_title', $user->ID)); ?>>School Social Worker</option>
           <option value="Secretary"             <?php selected('Secretary', get_user_option('wrdsb_job_title', $user->ID)); ?>>Secretary</option>
           <option value="Teacher"               <?php selected('Teacher', get_user_option('wrdsb_job_title', $user->ID)); ?>>Teacher</option>
           <option value="Vice-Principal"        <?php selected('Vice-Principal', get_user_option('wrdsb_job_title', $user->ID)); ?>>Vice-Principal</option>
