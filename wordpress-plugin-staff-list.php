@@ -52,6 +52,8 @@ function wrdsb_extra_user_profile_fields($user) { ?>
           <option value="DECE"                  <?php selected('DECE', get_user_option('wrdsb_job_title', $user->ID)); ?>>DECE</option>
           <option value="Department Head"       <?php selected('Department Head', get_user_option('wrdsb_job_title', $user->ID)); ?>>Department Head</option>
           <option value="Educational Assistant" <?php selected('Educational Assistant', get_user_option('wrdsb_job_title', $user->ID)); ?>>Educational Assistant</option>
+          <option value="ESL Contact Teacher"   <?php selected('ESL Contact Teacher', get_user_option('wrdsb_job_title', $user->ID)); ?>>ESL Contact Teacher</option>
+          <option value="ESL Teacher"           <?php selected('ESL Teacher', get_user_option('wrdsb_job_title', $user->ID)); ?>>ESL Teacher</option>
           <option value="Head Custodian"        <?php selected('Head Custodian', get_user_option('wrdsb_job_title', $user->ID)); ?>>Head Custodian</option>
           <option value="Head Secretary"        <?php selected('Head Secretary', get_user_option('wrdsb_job_title', $user->ID)); ?>>Head Secretary</option>
           <option value="In School Technician"  <?php selected('In School Technician', get_user_option('wrdsb_job_title', $user->ID)); ?>>In School Technician</option>
