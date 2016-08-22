@@ -1,3 +1,8 @@
+#### 0.1.9
+* Added role Head Custodian
+* Added role ESL Teacher
+* Added role ESL Conact Teacher
+
 #### 0.1.8
 * Added role School Social Worker
 * Added role In School Technician
