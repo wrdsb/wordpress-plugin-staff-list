@@ -1,3 +1,6 @@
+#### 0.2.0
+* Removed code for profile fields - now in separate plugin
+
 #### 0.1.9
 * Added role Head Custodian
 * Added role ESL Teacher
