@@ -117,7 +117,6 @@ class Staff_List_Table extends WP_List_Table {
 
         //Build row actions
         $actions = array(
-            'add'      => sprintf('<a href="?page=%s&action=%s&user=%s">Yes</a>',$_REQUEST['page'],'add',$user->ID),
             'remove'   => sprintf('<a href="?page=%s&action=%s&user=%s">No</a>',$_REQUEST['page'],'remove',$user->ID),
         );
 
@@ -212,7 +211,6 @@ class Staff_List_Table extends WP_List_Table {
      **************************************************************************/
     function get_bulk_actions() {
         $actions = array(
-            'bulk_add'    => 'Add to Staff List',
             'bulk_remove' => 'Remove from Staff List'
         );
         return $actions;
@@ -274,7 +272,7 @@ class Staff_List_Table extends WP_List_Table {
         /**
          * First, lets decide how many records per page to show
          */
-        $per_page = 30;
+        $per_page = 50;
 
 
         /**
