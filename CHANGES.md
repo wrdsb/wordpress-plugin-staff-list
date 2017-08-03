@@ -1,3 +1,8 @@
+####
+* Removed option to bulk add users to Staff List
+* Removed option to individually add users to Staff List
+* Increased records per admin page to 50
+
 #### 0.2.0
 * Removed code for profile fields - now in separate plugin
 
